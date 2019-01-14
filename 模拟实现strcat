@@ -1,0 +1,28 @@
+//4.模拟实现strcat
+#include<stdio.h>
+#include<stdlib.h>
+#include<assert.h>
+char* my_strcat(char* dest, const char *scr)
+{
+	char* ret = dest;
+	assert(dest);
+	assert(scr);
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	while (*scr != '\0')
+	{
+		*dest++ = *scr++;
+	}
+	*dest='\0';
+	return ret;
+}
+int main()
+{
+	char arr2[] = "abcdef";
+	char arr1[] = "hihiboy";
+	my_strcat(arr1, arr2);
+	printf("%s", arr1);
+	return 0;
+}
